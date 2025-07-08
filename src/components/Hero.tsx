@@ -4,38 +4,38 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Hero.module.css'
 
-export default function Hero() {
+function AnimatedCounter({ target, isDecimal = false }: { target: number; isDecimal?: boolean }) {
+  const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+  
+  useEffect(() => {
+    if (!isVisible) return
+    
+    const duration = 2000
+    const increment = target / (duration / 16)
+    let current = 0
+    
+    const timer = setInterval(() => {
+      current += increment
+      if (current < target) {
+        setCount(isDecimal ? parseFloat(current.toFixed(1)) : Math.floor(current))
+      } else {
+        setCount(target)
+        clearInterval(timer)
+      }
+    }, 16)
+    
+    return () => clearInterval(timer)
+  }, [isVisible, target, isDecimal])
+  
+  return <>{count}</>
+}
 
-  const animateCounter = (target: number, isDecimal: boolean = false) => {
-    const [count, setCount] = useState(0)
-    
-    useEffect(() => {
-      if (!isVisible) return
-      
-      const duration = 2000
-      const increment = target / (duration / 16)
-      let current = 0
-      
-      const timer = setInterval(() => {
-        current += increment
-        if (current < target) {
-          setCount(isDecimal ? parseFloat(current.toFixed(1)) : Math.floor(current))
-        } else {
-          setCount(target)
-          clearInterval(timer)
-        }
-      }, 16)
-      
-      return () => clearInterval(timer)
-    }, [isVisible])
-    
-    return count
-  }
+export default function Hero() {
 
   return (
     <section className={styles.hero}>
@@ -61,15 +61,15 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <div className={styles.stat}>
-              <div className={styles.statNumber}>{animateCounter(93)}%</div>
+              <div className={styles.statNumber}><AnimatedCounter target={93} />%</div>
               <div className={styles.statLabel}>of businesses miss AI-driven traffic</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNumber}>{animateCounter(4.2, true)}x</div>
+              <div className={styles.statNumber}><AnimatedCounter target={4.2} isDecimal />x</div>
               <div className={styles.statLabel}>higher conversion from AI searches</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNumber}>${animateCounter(2.3, true)}M</div>
+              <div className={styles.statNumber}>$<AnimatedCounter target={2.3} isDecimal />M</div>
               <div className={styles.statLabel}>average revenue impact</div>
             </div>
           </motion.div>
