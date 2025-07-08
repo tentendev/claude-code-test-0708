@@ -1,0 +1,72 @@
+.problem {
+  padding: 100px 0;
+  background: var(--color-gray-100);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--color-gray-600);
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: var(--color-light);
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-200);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  border-color: var(--color-gray-300);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cardIcon {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.cardText {
+  font-size: 16px;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+}

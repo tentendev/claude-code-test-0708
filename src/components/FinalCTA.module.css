@@ -1,0 +1,60 @@
+.finalCta {
+  padding: 120px 0;
+  background: var(--color-dark);
+  color: var(--color-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.ctaSubtitle {
+  font-size: 20px;
+  color: var(--color-gray-400);
+  margin-bottom: 48px;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.primaryButton {
+  background: var(--color-light);
+  color: var(--color-dark);
+  border: none;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primaryButton:hover {
+  background: var(--color-gray-100);
+  transform: translateY(-2px);
+}
+
+.ctaNote {
+  font-size: 14px;
+  color: var(--color-gray-500);
+}

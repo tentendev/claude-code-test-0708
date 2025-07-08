@@ -1,0 +1,99 @@
+.services {
+  padding: 100px 0;
+  background: var(--color-gray-100);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--color-gray-600);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.serviceCard {
+  background: var(--color-light);
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-200);
+  position: relative;
+  transition: all 0.2s;
+}
+
+.serviceCard:hover {
+  border-color: var(--color-gray-300);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.serviceCard.featured {
+  border-color: var(--color-dark);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-dark);
+  color: var(--color-light);
+  padding: 4px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+.serviceTitle {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.serviceList {
+  list-style: none;
+}
+
+.serviceList li {
+  padding: 8px 0;
+  color: var(--color-gray-600);
+  font-size: 16px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.serviceList li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-gray-400);
+}
+
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

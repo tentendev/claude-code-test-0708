@@ -1,0 +1,123 @@
+.hero {
+  padding: 160px 0 100px;
+  background: var(--color-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-mono);
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  color: var(--color-gray-600);
+  margin-bottom: 60px;
+  line-height: 1.5;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  margin-top: 4px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: var(--color-dark);
+  color: var(--color-light);
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primaryButton:hover {
+  background: var(--color-gray-800);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryButton:hover {
+  background: var(--color-dark);
+  color: var(--color-light);
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+  
+  .heroStats {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .heroCta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .heroCta button {
+    width: 100%;
+  }
+}
